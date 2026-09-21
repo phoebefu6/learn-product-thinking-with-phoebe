@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 3 of 6. One job, twelve features, five ways to cut. You cut, and the bench computes how much of the job still gets served, how many weeks are left, and the week anybody can first use the thing.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The cut bench - learn product thinking with phoebe">
+<meta property="og:description" content="Session 3 of 6. Cutting to the job takes 34 weeks down to 8. Cutting harder ships in 4 and is never usable. And the feature everybody expects costs 8 weeks and moves the number by zero.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/courses/03-the-cut-bench.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The cut bench - learn product thinking with phoebe">
+<meta name="twitter:description" content="Session 3 of 6. Cut a real backlog and watch what the cut actually buys.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 3 · The cut bench - learn product thinking with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-thinking-with-phoebe</a> / Session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Thinking with Phoebe · Session 3 of 6</div>
+    <h1>The <span class="accent">cut bench</span></h1>
+    <p class="sub">Everybody agrees that scope should be cut. Almost nobody can say what a particular cut actually buys, which is why the argument goes round in circles and the longest list usually wins. Tonight there is a bench: one stated job, twelve features on the backlog, and an engine that computes what every cut does to three numbers that matter. How much of the job still gets served, how many weeks of building are left, and the week anybody can first pick the thing up and use it. One of tonight's cuts ships faster than any other and is never usable at all. Bring the backlog you brought in session 2.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Bench night</span>
+      <span class="chip audience">Bring a laptop and your own list</span>
+      <span class="chip audience">No code, nothing to design</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-14 · The job and the backlog</span>
+      <span class="a3" style="flex:6">14-40 · The bench: five cuts</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Session 1 turned a request into a job. Session 2 turned a pile of requests into a set of problems. Tonight those meet a backlog, and the backlog loses. The point is not that cutting is virtuous. It is that a cut is a decision with consequences you can compute rather than argue about, and once the consequences are on screen the argument usually ends in about four minutes.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A feel for what a cut buys and what it costs, one cut made on your own list with the tradeoff written down, and the specific knowledge that "ships soonest" and "usable soonest" are different things that can point in opposite directions.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the setup</span>
+      <h2>One job, eight outcomes, twelve features</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">The club from session 1 got as far as a job. Then twelve things went on a list, the way twelve things always do.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The job at the top, the eight outcomes it needs with four marked core, and the twelve features on the backlog below, four of which serve no outcome">
+        <style>
+          .p3aH { font: 800 12px Inter, sans-serif; fill: #2B3947; }
+          .p3aS { font: 400 11px Inter, sans-serif; fill: #5E6975; }
+          .p3aT { font: 800 11.5px Inter, sans-serif; fill: #FFFFFF; }
+          .p3aD { font: 700 10px Inter, sans-serif; fill: #2B3947; }
+          .p3aO { font: 800 9.5px Inter, sans-serif; fill: #FFFFFF; }
+          .p3aX { font: 700 10px Inter, sans-serif; fill: #6E4A12; }
+        </style>
+
+        <rect x="30" y="22" width="820" height="40" rx="9" fill="#2B3947"/>
+        <text class="p3aT" x="46" y="47">THE JOB · Get eleven players confirmed for Saturday, and know by Thursday night</text>
+
+        <text class="p3aH" x="30" y="86">THE EIGHT OUTCOMES THE JOB NEEDS</text>
+        <text class="p3aS" x="330" y="86">the four in dark slate are core: without them there is no working tool</text>
+
+        <rect x="30" y="98" width="196" height="30" rx="7" fill="#2B3947"/>
+        <text class="p3aO" x="42" y="117">CORE · answer in seconds</text>
+        <rect x="234" y="98" width="196" height="30" rx="7" fill="#2B3947"/>
+        <text class="p3aO" x="246" y="117">CORE · see the count</text>
+        <rect x="438" y="98" width="196" height="30" rx="7" fill="#2B3947"/>
+        <text class="p3aO" x="450" y="117">CORE · chase the undecided</text>
+        <rect x="642" y="98" width="208" height="30" rx="7" fill="#2B3947"/>
+        <text class="p3aO" x="654" y="117">CORE · works on a phone</text>
+
+        <rect x="30" y="134" width="196" height="30" rx="7" fill="#C6D2DE"/>
+        <text class="p3aD" x="42" y="153">replace a late dropout</text>
+        <rect x="234" y="134" width="196" height="30" rx="7" fill="#C6D2DE"/>
+        <text class="p3aD" x="246" y="153">see fixtures in advance</text>
+        <rect x="438" y="134" width="196" height="30" rx="7" fill="#C6D2DE"/>
+        <text class="p3aD" x="450" y="153">collect match fees</text>
+        <rect x="642" y="134" width="208" height="30" rx="7" fill="#C6D2DE"/>
+        <text class="p3aD" x="654" y="153">keep appearances and goals</text>
+
+        <text class="p3aH" x="30" y="192">THE TWELVE ON THE BACKLOG</text>
+        <text class="p3aS" x="250" y="192">weeks of work in brackets · the four in ochre serve no stated outcome at all</text>
+
+        <rect x="30" y="204" width="820" height="34" rx="8" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p3aD" x="44" y="225">yes/no link (2) · count screen (2) · nudge (1) · waiting list (3) · fixtures (2) · card payment (5)</text>
+
+        <rect x="30" y="244" width="820" height="34" rx="8" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p3aD" x="44" y="265">appearance tables (4) · native apps (8) ·</text>
+        <text class="p3aX" x="290" y="265">team chat (3) · admin roles (2) · CSV export (1) · dark mode (1)</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - thirty-four weeks of work, and seven of those weeks serve nothing anybody wrote down</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What the bench measures, and why those three numbers<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Job served.</strong> How much of the stated job the selection covers, weighted by how much each outcome matters. This is the number people think they are arguing about.</p>
+        <p><strong>Weeks to build.</strong> The whole selection, added up. This is the number finance thinks it is arguing about.</p>
+        <p><strong>Weeks to usable.</strong> The week the core outcomes are first all met, walking the build in the order the selection is actually built in. This is the number that decides whether the thing helps anybody this season, and almost nobody computes it.</p>
+        <p>There is a fourth, which is the count of selected features that serve no stated outcome at all. It is not a judgement about whether those features are nice. It is an observation that nothing anybody wrote down gets better when they exist.</p>
+        <p>One rule makes the whole thing work: <strong>an outcome is met to the best degree any single feature delivers it.</strong> Two features that both cover the same outcome do not add up. That is not a simplification, it is the thing most backlogs get wrong.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Where the weights came from, and why they are visible<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Which outcomes count as core, and how much each is worth, is a judgement. It is the club's judgement, arrived at by the organiser saying what Saturday actually requires, and it is the single most contestable thing on the bench.</p>
+        <p>That is why it is on screen rather than buried. A tool that hides its weights produces answers that feel objective and are not. A tool that shows them lets you disagree with the right thing: if you think collecting match fees is core, change it, and watch every conclusion move. The arithmetic is not the opinion. The weights are, and they should be argued about openly before anybody argues about the features.</p>
+        <p>The same is true of the build costs. They are stipulated numbers, not estimates anybody produced. Estimating build cost honestly is a real and difficult skill, and it is a different subject.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="bench">
+    <div class="section-kicker">
+      <span class="klabel">Build-along · the bench</span>
+      <h2>Five cuts, computed in front of you</h2>
+      <span class="tag demo">★ 26 min · the main event</span>
+    </div>
+    <p class="lede">Work down the presets in order and read the four numbers each time before reading the verdict. Then cut it yourself with the checkboxes at the bottom.</p>
+
+    <div id="cut-bench"></div>
+
+    <div class="callout tip">
+      <p><strong>Read it in this order.</strong> Job served, then weeks to build, then weeks to usable. The first two behave the way everybody expects. The third is where the surprises live, because it is the only one that depends on what you build first rather than on what you build.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers what the cuts found</span>
+      <h2>What each cut actually bought</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Every figure below came off the bench you just used. Nothing here is asserted; it is all computed from the twelve features and the eight outcomes.</p>
+
+    <table class="clean">
+      <tr><th>The cut</th><th>Job served</th><th>Weeks</th><th>Usable in</th><th>What it bought</th></tr>
+      <tr><td><strong>Everything, loudest first</strong></td><td>96.7%</td><td>34</td><td>week 33</td><td>Everything, eventually. The club gets through an entire season first</td></tr>
+      <tr><td><strong>Everything, job first</strong></td><td>96.7%</td><td>34</td><td><strong>week 5</strong></td><td>Nothing was cut at all, and the club has a working tool 28 weeks earlier</td></tr>
+      <tr><td><strong>Cut to the job</strong></td><td>76.7%</td><td><strong>8</strong></td><td>week 5</td><td>26 weeks of work, for a fifth of the stated job, none of it core</td></tr>
+      <tr><td><strong>Cut harder</strong></td><td>51.3%</td><td>4</td><td><strong>never</strong></td><td>The fastest build on the board, and a tool nobody can use</td></tr>
+      <tr><td><strong>Cut to the job, plus native apps</strong></td><td>76.7%</td><td>16</td><td>week 5</td><td><strong>Nothing. Eight weeks, and not one number moved</strong></td></tr>
+    </table>
+
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five cuts drawn as bars of build weeks, with a marker showing the week each one first becomes usable: loudest first usable in week 33, job first in week 5, cut to the job in week 5 at 8 weeks total, cut harder never usable, plus native apps usable week 5 at 16 weeks">
+        <style>
+          .p3bH { font: 800 12px Inter, sans-serif; fill: #2B3947; }
+          .p3bS { font: 400 11px Inter, sans-serif; fill: #5E6975; }
+          .p3bL { font: 700 11px Inter, sans-serif; fill: #2B3947; }
+          .p3bW { font: 800 11px Inter, sans-serif; fill: #FFFFFF; }
+          .p3bU { font: 800 10px Inter, sans-serif; fill: #2B3947; }
+          .p3bN { font: 800 10.5px Inter, sans-serif; fill: #991B1B; }
+        </style>
+        <text class="p3bH" x="30" y="28">BAR = WEEKS OF WORK &#183; MARKER = THE WEEK ANYBODY CAN FIRST USE IT</text>
+        <text class="p3bS" x="30" y="46">the top two rows are the same twelve features and the same thirty-four weeks</text>
+        <text class="p3bL" x="30" y="90">Everything, loudest first</text>
+        <rect x="210" y="75" width="588" height="22" rx="5" fill="#3E5266"/>
+        <text class="p3bW" x="788" y="91" text-anchor="end">34w</text>
+        <path d="M 781 70 L 781 102" stroke="#2B3947" stroke-width="2.5"/>
+        <circle cx="781" cy="70" r="4" fill="#2B3947"/>
+        <text class="p3bU" x="771" y="115" text-anchor="end">usable wk 33</text>
+        <text class="p3bL" x="30" y="162">Everything, job first</text>
+        <rect x="210" y="147" width="588" height="22" rx="5" fill="#3E5266"/>
+        <text class="p3bW" x="788" y="163" text-anchor="end">34w</text>
+        <path d="M 296 142 L 296 174" stroke="#2B3947" stroke-width="2.5"/>
+        <circle cx="296" cy="142" r="4" fill="#2B3947"/>
+        <text class="p3bU" x="306" y="187" text-anchor="start">usable wk 5</text>
+        <text class="p3bL" x="30" y="234">Cut to the job</text>
+        <rect x="210" y="219" width="138" height="22" rx="5" fill="#5B7086"/>
+        <text class="p3bW" x="338" y="235" text-anchor="end">8w</text>
+        <path d="M 296 214 L 296 246" stroke="#2B3947" stroke-width="2.5"/>
+        <circle cx="296" cy="214" r="4" fill="#2B3947"/>
+        <text class="p3bU" x="306" y="259" text-anchor="start">usable wk 5</text>
+        <text class="p3bL" x="30" y="306">Cut harder</text>
+        <rect x="210" y="291" width="69" height="22" rx="5" fill="#991B1B"/>
+        <text class="p3bW" x="269" y="307" text-anchor="end">4w</text>
+        <text class="p3bN" x="291" y="307">never usable</text>
+        <text class="p3bL" x="30" y="378">Plus the native apps</text>
+        <rect x="210" y="363" width="277" height="22" rx="5" fill="#966718"/>
+        <text class="p3bW" x="477" y="379" text-anchor="end">16w</text>
+        <path d="M 296 358 L 296 390" stroke="#2B3947" stroke-width="2.5"/>
+        <circle cx="296" cy="358" r="4" fill="#2B3947"/>
+        <text class="p3bU" x="306" y="403" text-anchor="start">usable wk 5</text>
+        <rect x="30" y="404" width="820" height="26" rx="7" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p3bL" x="44" y="421">The bar is what it costs. The marker is when it starts helping. They are not the same decision.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the fourth row has the shortest bar on the board and no marker at all</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The row that ships fastest and fails<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>"Cut harder" keeps the two features nobody could argue with: the yes/no link and the organiser's count screen. Four weeks of work, the shortest build on the board, and every instinct says it is the disciplined choice.</p>
+        <p>Core coverage lands at <strong>77% against a bar of 85%</strong>, so weeks-to-usable comes back as <strong>never</strong>. What got cut was the one-week nudge to whoever has not answered, and without it the organiser can see that six people have replied and still has no way to chase the other fourteen except by going back to sending individual messages, which is the exact thing he asked for help with.</p>
+        <p>This is the honest shape of cutting: it has a floor, the floor is set by the job rather than by your appetite for discipline, and going below it produces something that ships sooner and helps nobody. A four-week build that nobody can use is worse than no build, because it also spent four weeks.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Eight weeks, and not one number moved<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Native iPhone and Android apps are the feature everybody assumes a real product has. On the bench they cost eight weeks, which is double the entire "cut to the job" build, and they move job served by <strong>exactly zero</strong>. Weeks to usable does not move either.</p>
+        <p>The reason is not that phone apps are bad. It is that the outcome they serve, "all of this works on a phone, standing up, outdoors", was already met by the two-week text-message link. The second feature covering the same outcome adds nothing, because an outcome that is met is met.</p>
+        <p>That is the general shape of the most expensive mistakes in product work, and it is almost invisible without the graph in front of you: <strong>the feature is not useless, it is redundant,</strong> and redundancy is much harder to argue against than uselessness because everybody can see what the feature does. The question that finds it is not "is this good?" but "which outcome does this serve, and is anything already serving it?"</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The cheapest cut on the board, which nobody proposes<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Four of the twelve features serve no stated outcome at all: team chat, admin roles, the spreadsheet export and dark mode. Together they are seven weeks.</p>
+        <p>Drop all four from the full build and it goes from <strong>34 weeks to 27</strong>, with job served unchanged at <strong>96.7%</strong>. Seven weeks, for nothing given up against anything anybody wrote down.</p>
+        <p>It is worth asking why this cut is rarely the one proposed. Partly because those features are individually cheap and each one looks like a rounding error. Partly because two of them are among the most-requested things on the list, and volume feels like evidence. And partly because "serves no stated outcome" is only visible if somebody wrote the outcomes down first, which is what sessions 1 and 2 were for.</p>
+      </div>
+    </details>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="One cut on your own list, with its tradeoff" data-hint="Name what you would cut, what outcome it was serving, and what you lose. If you cannot name the outcome it served, you have found something." data-seed="" data-cta="Count it"></div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers using this without a bench</span>
+      <h2>Four questions that do the same work on paper</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+    <p class="lede">You will not have an engine in the room. These four questions get most of the way there, and they are all askable in a meeting without sounding like an obstacle.</p>
+
+    <div class="tick" data-stages="Which outcome?|Anything already serving it?|Is it core?|What is the week?" data-title="The four questions, on any backlog" data-foot="Asked of each item in turn, on a list of twelve, this takes about fifteen minutes and usually removes a third of the list without anybody feeling overruled.">
+      <p class="tick-note" data-stage="0"><b>Which outcome does this serve?</b> Not "why is it good" - which specific written-down outcome gets better. An item with no answer is not necessarily cut, but it is now visible, which is most of the work.</p>
+      <p class="tick-note" data-stage="1"><b>Is anything already serving that outcome?</b> This is the redundancy question, and it is the one that finds the eight-week feature that moves nothing. Ask it before the item goes on the list, not after it is half built.</p>
+      <p class="tick-note" data-stage="2"><b>Is that outcome core?</b> Meaning: if this outcome is not met, is the thing usable at all? Core and non-core are a different question from important and unimportant, and conflating them is how the floor gets breached.</p>
+      <p class="tick-note" data-stage="3"><b>In what week does this order first produce something usable?</b> Walk the list top to bottom, adding up the weeks, and stop at the point every core outcome is met. That week is the number to take into the room.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 4</h2>
+      <span class="tag exercise">25 min</span>
+    </div>
+    <ol>
+      <li><strong>Run the four questions down your own backlog.</strong> Write the outcome next to each item, and put a mark against every item where you cannot name one.</li>
+      <li><strong>Find your redundant feature.</strong> Most lists have one: two items serving the same outcome, where the cheaper one was already enough. Note what it would cost to build both.</li>
+      <li><strong>Work out your floor.</strong> Which items must exist before anybody can use the thing at all? That set is your "cut harder" line, and going under it is the failure in tonight's fourth row.</li>
+      <li><strong>Write down the week.</strong> In your current order, when does something usable first exist? Bring that number to session 4, because session 4 is about what happens to it when you change nothing but the order.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 3 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · On the bench, "cut harder" produced the shortest build of any option, four weeks, and reported weeks-to-usable as "never". Why?</p>
+      <button class="qopt" type="button">A · Four weeks is not enough time to build anything at all</button>
+      <button class="qopt" type="button">B · It cut a one-week feature that served a core outcome, so core coverage came to 77% against a bar of 85% - the organiser could see the count and still had no way to chase anyone, which is the problem he started with</button>
+      <button class="qopt" type="button">C · The remaining features were too expensive to finish</button>
+      <button class="qopt" type="button">D · The bench penalises any selection with fewer than four features</button>
+      <p class="qwhy">Cutting has a floor and the job sets it, not your appetite for discipline. A build that ships fastest and leaves a core outcome unmet has spent the weeks and bought nothing, which is strictly worse than not starting.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · Adding native phone apps cost eight weeks and moved job served by exactly zero. What is the generalisable lesson?</p>
+      <button class="qopt" type="button">A · Native apps are never worth building</button>
+      <button class="qopt" type="button">B · Expensive features are usually the wrong ones</button>
+      <button class="qopt" type="button">C · The bench does not model mobile properly</button>
+      <button class="qopt" type="button">D · The feature was redundant rather than useless - the outcome it served was already met by a cheaper feature, and redundancy is harder to argue against than uselessness because everybody can see what the feature does</button>
+      <p class="qwhy">The question that catches it is not "is this good?" but "which outcome does this serve, and is anything already serving it?" An outcome that is met is met, and a second feature covering it adds nothing however good it is.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · Someone objects that the bench's conclusions depend entirely on which outcomes were marked core and how they were weighted. Are they right?</p>
+      <button class="qopt" type="button">A · No, the weights are derived from the data</button>
+      <button class="qopt" type="button">B · No, the arithmetic makes the result objective</button>
+      <button class="qopt" type="button">C · Yes, completely - which is why the weights are on screen rather than buried. They are a judgement about what the job requires, they should be argued about openly before anybody argues about features, and changing them moves every conclusion</button>
+      <button class="qopt" type="button">D · Yes, which means the bench cannot tell you anything useful</button>
+      <p class="qwhy">The arithmetic is not the opinion; the weights are. A tool that hides them produces answers that feel objective and are not. Showing them lets the disagreement land on the right thing, and D overcorrects: a model whose assumptions are visible and contestable is more useful than one whose assumptions are invisible.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Every figure in the cut table</span><span class="note">Computed in your browser from a feature-to-outcome graph: real weighted coverage, a real walk through the build order, a real threshold. Derived and checked before this page quoted any of it</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Ferry, the club, the backlog</span><span class="note">Invented. Written so the five cuts behave differently from each other, not observed anywhere. Every number describes this backlog only</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Which outcomes are core, and their weights</span><span class="note">A judgement, shown on screen rather than hidden, so that you can disagree with it and watch the conclusions move</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">What each feature costs to build</span><span class="note">Stipulated, not estimated. Honest cost estimation is a real skill and a different subject</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">How often redundant features get built in practice</span><span class="note">Not claimed. The bench demonstrates the mechanism; no published rate was found, so none is stated</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Which outcome does this serve?</b><span>Not "is it good". Name the written-down outcome.</span></div>
+      <div class="cheat-item"><b>Is anything already serving it?</b><span>The redundancy question. Finds the 8-week feature that moves nothing.</span></div>
+      <div class="cheat-item"><b>Ships soonest is not usable soonest</b><span>They can point in opposite directions.</span></div>
+      <div class="cheat-item"><b>Cutting has a floor</b><span>Set by the job. Under it, you spend the weeks and buy nothing.</span></div>
+      <div class="cheat-item"><b>Met is met</b><span>Two features covering one outcome do not add up.</span></div>
+      <div class="cheat-item"><b>Show your weights</b><span>Hidden judgements produce answers that feel objective and are not.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Look again at the first two rows of tonight's table. The same twelve features, the same thirty-four weeks, the same job coverage at the end, and a working tool in week five rather than week thirty-three. Nothing was cut to get that. Session 4 is about the only thing that changed, which is the order, and about what it actually costs to ship the early version rather than the finished one. Bring a plan of your own with more than five things on it.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 6 · learn-product-thinking-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="02-what-people-ask-for.html">← Prev: What people ask for</a> &nbsp;·&nbsp; <a href="04-order-is-a-product-decision.html">Next: Order is a product decision →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/pt-live.js?v=1"></script>
+</body>
+</html>

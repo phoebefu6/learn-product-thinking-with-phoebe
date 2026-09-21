@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Six sessions on deciding what to build and whether it should exist: the job a product is hired to do, why a request is evidence rather than a specification, and what a cut actually buys you. The on-ramp to the system and product design shelf. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Product Thinking with Phoebe">
+<meta property="og:description" content="Twelve features, thirty-four weeks, and a twenty-eight week difference in when anyone can use it. Same list, different order. Six sessions on the work before a single screen gets designed.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Product Thinking with Phoebe">
+<meta name="twitter:description" content="A bench where you cut a real backlog and watch what the cut buys. Eight weeks of native apps move the number by zero.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Product Thinking with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(43,57,71,.14); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#F1F5F1); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .not-this { border: 1px solid var(--hairline); border-left: 4px solid var(--clay); border-radius: var(--radius); background: #fff; padding: 1.1rem 1.3rem; margin-top: 1.2rem; }
+  .not-this h3 { font-size: .95rem; font-weight: 800; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · System &amp; Product Design</div>
+    <h1>Learn <span class="accent">Product Thinking</span> with Phoebe</h1>
+    <p class="sub">A football club asked for a tool to sort out Saturday. Twelve things went on the list. Built in the order people asked for them, the club could first use it in week thirty-three. Built in the order the job needed, week five. Same twelve features, same thirty-four weeks of work, twenty-eight weeks of difference. And the one feature everybody assumed was essential, native phone apps, costs eight weeks and moves the useful number by exactly zero. Six sessions on the work that happens before a single screen gets designed: what the thing is for, who asked, what you cut, and how to say no so it lands. No code, no diagrams to draw, no product experience assumed.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="12">12</b><span>features on the backlog</span></div>
+      <div class="stat"><b data-count="28">28</b><span>weeks bought by order alone</span></div>
+      <div class="stat"><b data-count="0">0</b><span>bought by the native apps</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The six sessions 🎯 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· before a single screen is designed</span></h2>
+      <p class="plede">The running situation is <strong>Ferry</strong>, a tool a Sunday-league football club wants so that eleven players are confirmed by Thursday night. Twelve features get proposed. Four of them serve no stated outcome at all, one of them duplicates something the cheapest feature already did, and the order they get built in turns out to matter more than the list.</p>
+    </div>
+
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-the-job-not-the-feature.html" style="--diff:#7FD8CB">
+        <span class="cicon">🎣</span>
+        <span class="cnum">Session 1 · easy</span>
+        <h3>The job, not the feature</h3>
+        <p>"We need an app" is an answer wearing the costume of a problem. What somebody is actually trying to get done, who they are, and what they do today instead. The problem statement that every design course starts from, and nobody teaches you to write.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span></span>
+      </a>
+      <a class="course-card" href="courses/02-what-people-ask-for.html" style="--diff:#7FD8CB">
+        <span class="cicon">📣</span>
+        <span class="cnum">Session 2 · easy</span>
+        <h3>What people ask for is not what they need</h3>
+        <p>A request is evidence about a problem, not a specification for a solution. How to take a feature request seriously without building it, and why the loudest thing on the list is so often the one that serves nothing.</p>
+        <span class="meta"><span class="pill">requests as evidence</span></span>
+      </a>
+      <a class="course-card" href="courses/03-the-cut-bench.html" style="--diff:#F87171">
+        <span class="cicon">✂️</span>
+        <span class="cnum">Session 3 · bench night</span>
+        <h3>The cut bench</h3>
+        <p>One job, twelve features, and five ways to cut. You cut; the bench computes how much of the job still gets served, how many weeks are left, and the week anybody can first use the thing. One cut ships fastest and serves nobody.</p>
+        <span class="meta"><span class="pill amber">★ the bench</span></span>
+      </a>
+      <a class="course-card" href="courses/04-order-is-a-product-decision.html" style="--diff:#7FD8CB">
+        <span class="cicon">🔢</span>
+        <span class="cnum">Session 4 · easy</span>
+        <h3>Order is a product decision</h3>
+        <p>The same list, built in a different order, is a different product for twenty-eight weeks. First usable against finally finished, why a thing that works badly in week five beats a thing that works well in week thirty-three, and what that costs you.</p>
+        <span class="meta"><span class="pill">first usable</span></span>
+      </a>
+      <a class="course-card" href="courses/05-saying-no-so-it-lands.html" style="--diff:#FBBF24">
+        <span class="cicon">🙅</span>
+        <span class="cnum">Session 5 · medium</span>
+        <h3>Saying no so it lands</h3>
+        <p>Most product decisions are declines, and a decline that leaves somebody feeling dismissed costs more than the feature would have. How to say no to the thing, out loud, while saying yes to the person and the problem underneath it.</p>
+        <span class="meta"><span class="pill">the reason attached</span></span>
+      </a>
+      <a class="course-card" href="courses/06-your-product-on-one-page.html" style="--diff:#FBBF24">
+        <span class="cicon">📄</span>
+        <span class="cnum">Session 6 · medium</span>
+        <h3>Your product on one page</h3>
+        <p>The note that makes everything else usable by somebody who was not in the room: the job, who it is for, what is in, what is deliberately out, and how you will know. Final scorecard, and the door into designing the thing.</p>
+        <span class="meta"><span class="pill amber">🔒 final scorecard</span></span>
+      </a>
+    </div>
+
+    <div class="diff-legend">
+      <span><i style="background:#7FD8CB"></i>easy - everyone</span>
+      <span><i style="background:#FBBF24"></i>medium</span>
+      <span><i style="background:#F87171"></i>bench night</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Six stamps means you can take "we need an app" and turn it into something worth building, in an order that works. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+
+  <section class="section">
+    <div class="not-this">
+      <h3>What this is not, so you land in the right place 🧭</h3>
+      <table class="clean">
+        <tr><th>If your question is</th><th>Go here instead</th></tr>
+        <tr><td>I have a problem statement. How do I design the actual screen?</td><td><a href="https://phoebefu6.github.io/learn-product-design-with-phoebe/">Product Design &amp; UI/UX ↗</a></td></tr>
+        <tr><td>Which architecture should this be built on, and what does each choice cost?</td><td><a href="https://phoebefu6.github.io/learn-system-design-with-phoebe/">System Design &amp; Orchestration ↗</a></td></tr>
+        <tr><td>How do I review a data product that already exists?</td><td><a href="https://phoebefu6.github.io/learn-data-heuristics-with-phoebe/">Data Product Heuristics ↗</a></td></tr>
+        <tr><td>Where does the data actually go once somebody clicks the button?</td><td><a href="https://phoebefu6.github.io/learn-data-pipelines-with-phoebe/">Data Pipelines ↗</a></td></tr>
+        <tr><td>How do I tell whether the change I shipped worked?</td><td><a href="https://phoebefu6.github.io/learn-experimentation-with-phoebe/">Experimentation ↗</a></td></tr>
+        <tr><td><strong>Somebody wants a thing built. What is it for, what goes in, and what do I cut?</strong></td><td><strong>you are in the right place</strong></td></tr>
+      </table>
+      <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)"><strong>This is the door into the system and product design shelf.</strong> It designs nothing and builds nothing. Everything here happens before the first screen exists, and every session ends by naming which course to take when you want the next step.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same conviction: most of what gets built did not need to be, and the way to find out is cheaper than building it.</p>
+      <div class="path"><b>🙋 Somebody asked me to spec a thing</b>
+        <a class="pstep" href="courses/01-the-job-not-the-feature.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-what-people-ask-for.html">2</a>
+        <span style="font-size:.82rem;color:var(--muted)">what it is for, and how to read the requests you were handed</span>
+      </div>
+      <div class="path"><b>📋 My backlog is too long and everything is urgent</b>
+        <a class="pstep" href="courses/03-the-cut-bench.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-order-is-a-product-decision.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-saying-no-so-it-lands.html">5</a>
+        <span style="font-size:.82rem;color:var(--muted)">cut it, order it, then decline the rest without making enemies</span>
+      </div>
+      <div class="path"><b>🎯 The whole thing</b>
+        <a class="pstep" href="courses/01-the-job-not-the-feature.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-what-people-ask-for.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-the-cut-bench.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-order-is-a-product-decision.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-saying-no-so-it-lands.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-your-product-on-one-page.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">from "we need an app" to one page somebody can build from</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is honest here 🧾</h2>
+      <p class="plede">The bench in session 3 computes every number from its own feature list. The product behind it is invented, and the pages say so on every screen that quotes a figure.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>Every figure in the cut table</td><td><strong>Really computed</strong> from a feature-to-outcome graph: real weighted coverage, a real build-order walk, a real threshold</td></tr>
+      <tr><td>Ferry, the football club tool</td><td><strong>Invented.</strong> Written so the five cuts behave differently from each other, not observed in the wild. Every number describes this backlog only</td></tr>
+      <tr><td>Which outcomes are core, and what each is worth</td><td><strong>A judgement, shown rather than hidden.</strong> The bench makes the weights visible so you can disagree with them</td></tr>
+      <tr><td>What each feature would cost to build</td><td><strong>Stipulated.</strong> Estimating build cost is a real skill and this is not the course for it</td></tr>
+      <tr><td>That order can be worth more than scope</td><td><strong>Demonstrated here, not measured in the world.</strong> The bench shows the mechanism working; how often it bites in practice is a separate question</td></tr>
+      <tr><td>How much software gets built and never used</td><td><strong>Stated only where a source could be read,</strong> with the tier shown. Session 2 takes the most-quoted figure apart rather than repeating it</td></tr>
+      <tr><td>The verdict line on the bench</td><td><strong>A heuristic,</strong> badged as one on the widget</td></tr>
+    </table>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-product-thinking-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Next on the shelf: <a href="https://phoebefu6.github.io/learn-product-design-with-phoebe/">Product Design &amp; UI/UX ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-system-design-with-phoebe/">System Design ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-data-heuristics-with-phoebe/">Data Product Heuristics ↗</a></span>
+  </footer>
+
+</main>
+
+<script>
+window.MINDMAP_DATA = {
+  title: "Learn\nProduct Thinking",
+  centerColor: "#2B3947",
+  sessions: [
+    { label: "The job, not\nthe feature", href: "courses/01-the-job-not-the-feature.html", color: "#7FD8CB",
+      concepts: [
+        { label: "A solution wearing a problem's clothes", href: "courses/01-the-job-not-the-feature.html" },
+        { label: "What they do today instead", href: "courses/01-the-job-not-the-feature.html" },
+        { label: "The problem statement", href: "courses/01-the-job-not-the-feature.html" } ] },
+    { label: "What people\nask for", href: "courses/02-what-people-ask-for.html", color: "#7FD8CB",
+      concepts: [
+        { label: "A request is evidence", href: "courses/02-what-people-ask-for.html" },
+        { label: "Loudest is not most needed", href: "courses/02-what-people-ask-for.html" },
+        { label: "The number everybody repeats", href: "courses/02-what-people-ask-for.html" } ] },
+    { label: "The cut\nbench", href: "courses/03-the-cut-bench.html", color: "#F87171",
+      concepts: [
+        { label: "What the cut buys", href: "courses/03-the-cut-bench.html" },
+        { label: "Eight weeks, zero movement", href: "courses/03-the-cut-bench.html" },
+        { label: "Ships fastest, serves nobody", href: "courses/03-the-cut-bench.html" } ] },
+    { label: "Order is a\nproduct decision", href: "courses/04-order-is-a-product-decision.html", color: "#7FD8CB",
+      concepts: [
+        { label: "Week 33 against week 5", href: "courses/04-order-is-a-product-decision.html" },
+        { label: "First usable", href: "courses/04-order-is-a-product-decision.html" },
+        { label: "What the early version costs", href: "courses/04-order-is-a-product-decision.html" } ] },
+    { label: "Saying no\nso it lands", href: "courses/05-saying-no-so-it-lands.html", color: "#FBBF24",
+      concepts: [
+        { label: "No to the thing, yes to the person", href: "courses/05-saying-no-so-it-lands.html" },
+        { label: "The reason attached", href: "courses/05-saying-no-so-it-lands.html" },
+        { label: "Not yet, and what would change it", href: "courses/05-saying-no-so-it-lands.html" } ] },
+    { label: "Your product\non one page", href: "courses/06-your-product-on-one-page.html", color: "#FBBF24",
+      concepts: [
+        { label: "What is deliberately out", href: "courses/06-your-product-on-one-page.html" },
+        { label: "How you will know", href: "courses/06-your-product-on-one-page.html" },
+        { label: "Final scorecard", href: "courses/06-your-product-on-one-page.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

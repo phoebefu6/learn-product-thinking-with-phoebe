@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 2 of 6. A feature request is evidence that somebody has a problem, not a specification for what to build. How to read a pile of requests, and what is really behind the claim that 45% of software features are never used.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="What people ask for is not what they need - learn product thinking with phoebe">
+<meta property="og:description" content="Session 2 of 6. Requests are your cheapest evidence and your worst specification. Plus the most-quoted number in product, read from the slide it actually came from.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/courses/02-what-people-ask-for.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What people ask for is not what they need - learn product thinking with phoebe">
+<meta name="twitter:description" content="Session 2 of 6. Reading requests as evidence, and the truth behind the 45% figure.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-thinking-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 2 · What people ask for is not what they need - learn product thinking with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-thinking-with-phoebe</a> / Session 2 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Thinking with Phoebe · Session 2 of 6</div>
+    <h1>What people ask for <span class="accent">is not what they need</span></h1>
+    <p class="sub">Last time you turned one request into four lines. Tonight you have a pile of them. A request is a strange object: it is reliable evidence that somebody has a problem, and it is a terrible instruction for what to build. Learn to hold both of those at once and the pile stops being a to-do list you are behind on and starts being the cheapest research anybody will ever hand you. Along the way you will take apart the number everybody in this field quotes, by reading the slide it came from.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Everyone</span>
+      <span class="chip audience">Bring the requests you collected</span>
+      <span class="chip audience">No code, nothing to design</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:5">3-18 · Requests as evidence</span>
+      <span class="a3" style="flex:7">18-40 · Build-along: read your pile</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we start</h2>
+    </div>
+    <p class="lede">Somebody forwards you a message: "can we get a print button on the report screen?" You have two obvious moves and both of them are wrong. You can add the print button, which takes a week and is the single most popular way products turn into landfill. Or you can explain why the print button is not a priority, which takes four minutes and costs you the next twelve things that person would have told you. There is a third move, it is not a compromise, and it is what tonight is about.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> Your own pile of requests, regrouped by the problem each one implies rather than by the feature it names, with the people who asked marked, and at least one request left over that serves no problem you can name.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers requests as evidence</span>
+      <h2>A request is evidence, not a specification</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Somebody went to the trouble of asking. That is a real signal and it is worth a lot. What it is not is a description of what should exist.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two columns: what a feature request reliably tells you, and what it does not tell you. It tells you a problem exists, roughly where it lives, and that it hurts enough to say out loud. It does not tell you what to build, how common the problem is, or whether the asker holds the job.">
+        <style>
+          .p2aH { font: 800 12px Inter, sans-serif; fill: #2B3947; }
+          .p2aS { font: 400 11px Inter, sans-serif; fill: #5E6975; }
+          .p2aT { font: 800 11.5px Inter, sans-serif; fill: #FFFFFF; }
+          .p2aW { font: 400 10.5px Inter, sans-serif; fill: #EEF2F6; }
+          .p2aD { font: 800 11.5px Inter, sans-serif; fill: #2B3947; }
+          .p2aM { font: 400 10.5px Inter, sans-serif; fill: #5E6975; }
+          .p2aB { font: 800 11.5px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="p2aH" x="30" y="26">WHAT A REQUEST RELIABLY TELLS YOU</text>
+        <text class="p2aS" x="30" y="44">treat all three as true until shown otherwise</text>
+        <text class="p2aH" x="460" y="26">WHAT IT DOES NOT TELL YOU</text>
+        <text class="p2aS" x="460" y="44">and never has, no matter how confidently it is phrased</text>
+
+        <rect x="30" y="58" width="390" height="66" rx="9" fill="#3E5266"/>
+        <text class="p2aT" x="46" y="84">A problem exists</text>
+        <text class="p2aW" x="46" y="104">Somebody hit friction on a real working day</text>
+
+        <rect x="30" y="134" width="390" height="66" rx="9" fill="#3E5266"/>
+        <text class="p2aT" x="46" y="160">Roughly where it lives</text>
+        <text class="p2aW" x="46" y="180">Which screen, which week, which part of the job</text>
+
+        <rect x="30" y="210" width="390" height="66" rx="9" fill="#3E5266"/>
+        <text class="p2aT" x="46" y="236">It hurts enough to say out loud</text>
+        <text class="p2aW" x="46" y="256">Most friction is absorbed in silence. This one was not</text>
+
+        <rect x="460" y="58" width="390" height="66" rx="9" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p2aD" x="476" y="84">What to build</text>
+        <text class="p2aM" x="476" y="104">The named feature is the nearest thing they have seen</text>
+
+        <rect x="460" y="134" width="390" height="66" rx="9" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p2aD" x="476" y="160">How common the problem is</text>
+        <text class="p2aM" x="476" y="180">One loud voice and forty quiet ones look identical here</text>
+
+        <rect x="460" y="210" width="390" height="66" rx="9" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p2aD" x="476" y="236">Whether the asker holds the job</text>
+        <text class="p2aM" x="476" y="256">Plenty of requests are relayed on somebody else's behalf</text>
+
+        <rect x="30" y="288" width="820" height="30" rx="8" fill="#966718"/>
+        <text class="p2aB" x="46" y="308">Take the left column seriously. Never let the right column be filled in by assumption.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the two halves of a request, and only one of them is information</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Taking a request seriously without building it<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>There is a move that keeps the evidence and drops the instruction, and it fits in one short conversation. It has three parts and they go in this order.</p>
+        <p><strong>Restate the problem back.</strong> Not the feature, the problem. "So when the Monday numbers come out, you need to get them in front of four people who cannot log in, and right now that means screenshots." If you have it wrong, they will correct you immediately and enthusiastically, which is the point. If you have it right, you have just done something almost nobody does for them: you listened past the sentence.</p>
+        <p><strong>Ask what they would do if the feature did not exist.</strong> This is the gentlest possible way to find the workaround, because it does not sound like a refusal. Sometimes the answer is "nothing, I would just keep screenshotting", and now you know the cost. Sometimes it is "oh, I would just ask Sam", and you have learned the problem already has a solution, which is a very different conversation.</p>
+        <p><strong>Ask what happened the last time.</strong> One incident, with a date attached. "Last Monday I sent four screenshots and one of them was the wrong week, and the board meeting used it." That single sentence outranks a page of general description, and it hands you what better would have to mean.</p>
+        <p>Notice what has not happened. You have not agreed to build the print button, and you have also not said no to it. You have taken the request more seriously than the person expected, which is why this rarely feels like a brush-off.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The two failure modes, and why one is much worse<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p><strong>Build everything requested.</strong> This is the popular failure because every individual decision looks reasonable and helpful. The effect is cumulative rather than immediate: you become an order-taker, which means the queue now decides what the product is, and whoever asks most often wins. The product becomes incoherent in a specific way, where each part makes sense to the person who asked for it and no part makes sense to anybody arriving fresh. Nobody can point at the meeting where that decision was taken, because it never was one.</p>
+        <p><strong>Dismiss requests.</strong> This looks like the disciplined alternative and it is far worse, for a reason that is easy to miss. The requests were your cheapest source of evidence about where the product hurts. They arrive unprompted, they cost nothing, and they come from people doing the actual work. Dismiss enough of them and they stop arriving. The problems do not stop, you just stop hearing about them, and the silence is indistinguishable from things going well right up until somebody leaves.</p>
+        <p>The asymmetry matters. Over-building wastes effort you can see. Dismissing destroys an information channel you cannot see, and it does not grow back quickly once people have decided you are not worth telling.</p>
+        <p>The third move avoids both because it separates two things that got glued together: whether to take the request seriously, and whether to build the named thing. Those were never the same question.</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the most-quoted number in product</span>
+      <h2>45% of features are never used. Where that came from.</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">You have heard this number. It is on slides, in books, in the opening minute of conference talks. The figure is real and it was read here from the original. What is behind it is not what almost anybody quoting it believes.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Features and Function Usage pie from the 2002 keynote slide, drawn as a bar: never 45 percent, rarely 19 percent, sometimes 16 percent, often 13 percent, always 7 percent. The famous 64 percent figure is the first two segments added together, from the same slide.">
+        <style>
+          .p2bH { font: 800 12px Inter, sans-serif; fill: #2B3947; }
+          .p2bS { font: 400 11px Inter, sans-serif; fill: #5E6975; }
+          .p2bV { font: 800 15px Inter, sans-serif; fill: #FFFFFF; }
+          .p2bVd { font: 800 15px Inter, sans-serif; fill: #2B3947; }
+          .p2bL { font: 700 10.5px Inter, sans-serif; fill: #2B3947; }
+          .p2bO { font: 700 11px Inter, sans-serif; fill: #6E4A12; }
+          .p2bB { font: 800 11.5px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="p2bH" x="40" y="28">"FEATURES &amp; FUNCTION USAGE", AS PRINTED ON THE SLIDE</text>
+        <text class="p2bS" x="40" y="46">a 2002 conference keynote deck, surviving only in a web archive capture</text>
+
+        <rect x="40" y="66" width="360" height="54" rx="6" fill="#2B3947"/>
+        <rect x="400" y="66" width="152" height="54" rx="6" fill="#3E5266"/>
+        <rect x="552" y="66" width="128" height="54" rx="6" fill="#5B7086"/>
+        <rect x="680" y="66" width="104" height="54" rx="6" fill="#C6D2DE"/>
+        <rect x="784" y="66" width="56" height="54" rx="6" fill="#EEF2F6" stroke="#C6D2DE"/>
+
+        <text class="p2bV" x="220" y="99" text-anchor="middle">45%</text>
+        <text class="p2bV" x="476" y="99" text-anchor="middle">19%</text>
+        <text class="p2bV" x="616" y="99" text-anchor="middle">16%</text>
+        <text class="p2bVd" x="732" y="99" text-anchor="middle">13%</text>
+        <text class="p2bVd" x="812" y="99" text-anchor="middle">7%</text>
+
+        <text class="p2bL" x="220" y="140" text-anchor="middle">Never</text>
+        <text class="p2bL" x="476" y="140" text-anchor="middle">Rarely</text>
+        <text class="p2bL" x="616" y="140" text-anchor="middle">Sometimes</text>
+        <text class="p2bL" x="732" y="140" text-anchor="middle">Often</text>
+        <text class="p2bL" x="812" y="140" text-anchor="middle">Always</text>
+
+        <path d="M 40 158 L 40 168 L 552 168 L 552 158" fill="none" stroke="#966718" stroke-width="2"/>
+        <text class="p2bO" x="40" y="188">45 + 19 = 64%. The other number everybody quotes is these two segments of this one slide,</text>
+        <text class="p2bO" x="40" y="205">added together. It is not a second study, and it is not corroboration.</text>
+
+        <rect x="40" y="222" width="800" height="62" rx="8" fill="#966718"/>
+        <text class="p2bB" x="58" y="246">The slide carries no sample size, no year, and no methodology at all.</text>
+        <text class="p2bB" x="58" y="268">Two later accounts of what was measured exist, and they contradict each other.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - every figure here is as printed; everything missing is missing from the source too</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What the slide says, and what it does not<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The primary source was tracked down and read for this session. It is a keynote slide deck from a software conference in 2002, titled <em>ROI - It's Your Job!</em>, by Jim Johnson, copyright The Standish Group International. It is not hosted anywhere current. It survives in a Wayback Machine capture of the conference host, and that is the only reason any of this can be checked at all.</p>
+        <p>One slide is titled "Features &amp; Function Usage". It is a pie chart with five slices: <strong>never 45%, rarely 19%, sometimes 16%, often 13%, always 7%</strong>. Those five numbers are what the slide says. The famous 45% is the first slice. The other famous number, "64% of features are rarely or never used", is 45 plus 19, from the same pie, on the same slide. Two figures, one source, and they have been travelling separately for twenty years as if they were independent confirmations of each other.</p>
+        <p><strong>Here is the finding.</strong> The slide carries no sample size, no year, and no methodology. Not a footnote, not a caption, nothing. The deck does have a general methodology slide elsewhere, mentioning tens of thousands of projects since 1994, but that describes a separate body of success-and-failure research, not this pie. The pie itself follows another slide that is equally uncited.</p>
+        <p>Two later accounts of what was actually measured exist, and they disagree. One says Standish stated in 2015 that it came from four internal applications. Another has a 2010 Standish report citing an unpublished 1996 study of a hundred custom applications. Four applications or a hundred, 2002 or 1996: neither account could be corroborated against a primary document. The honest position is to state that the two accounts disagree and not to pick one.</p>
+        <p><strong>So never call it a study.</strong> It is one unsourced pie chart in a conference deck. The figures are real in the sense that they are really on the slide. Nothing further is known.</p>
+      </div>
+    </details>
+
+    <div class="callout tip">
+      <p><strong>Why this matters more than it looks.</strong> You will meet this number in a meeting, quoted at you as settled fact, usually to win an argument you were already going to win on the merits. Knowing what it is lets you do something better than contradicting the person: you can say where it came from, agree that the direction is probably right, and move the conversation onto the mechanism, which is where the actual decision lives.</p>
+    </div>
+
+    <p class="lede">There is a much better number. It measures something different, it does not say what people think the first one says, and it is worth knowing precisely because it does not tidily agree.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The 2002 keynote slide compared with the Pendo 2019 Feature Adoption Report. The slide says never 45 percent and rarely 19 percent, so rarely-or-never is 64 percent. Pendo telemetry says never used 24 percent and rare 56 percent, so rarely-or-never is 80 percent. The two do not confirm each other.">
+        <style>
+          .p2cH { font: 800 12px Inter, sans-serif; fill: #2B3947; }
+          .p2cS { font: 400 10.5px Inter, sans-serif; fill: #5E6975; }
+          .p2cN { font: 800 12px Inter, sans-serif; fill: #2B3947; }
+          .p2cV { font: 800 13px Inter, sans-serif; fill: #FFFFFF; }
+          .p2cVd { font: 800 13px Inter, sans-serif; fill: #2B3947; }
+          .p2cK { font: 700 10.5px Inter, sans-serif; fill: #2B3947; }
+          .p2cKw { font: 700 10.5px Inter, sans-serif; fill: #FFFFFF; }
+          .p2cKs { font: 700 10px Inter, sans-serif; fill: #2B3947; }
+          .p2cB { font: 800 11.5px Inter, sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <text class="p2cH" x="30" y="26">TWO NUMBERS THAT ARE NOT THE SAME NUMBER</text>
+
+        <rect x="250" y="40" width="252" height="18" rx="4" fill="#2B3947"/>
+        <text class="p2cKw" x="376" y="53" text-anchor="middle">never used</text>
+        <rect x="506" y="40" width="106" height="18" rx="4" fill="#3E5266"/>
+        <text class="p2cKw" x="559" y="53" text-anchor="middle">rare</text>
+        <rect x="616" y="40" width="194" height="18" rx="4" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p2cK" x="713" y="53" text-anchor="middle">used more than that</text>
+
+        <text class="p2cN" x="30" y="86">The 2002 slide</text>
+        <text class="p2cS" x="30" y="104">unsourced pie, no sample,</text>
+        <text class="p2cS" x="30" y="119">no year, no method</text>
+        <rect x="250" y="76" width="252" height="48" rx="6" fill="#2B3947"/>
+        <text class="p2cV" x="376" y="106" text-anchor="middle">45%</text>
+        <rect x="506" y="76" width="106" height="48" rx="6" fill="#3E5266"/>
+        <text class="p2cV" x="559" y="106" text-anchor="middle">19%</text>
+        <rect x="616" y="76" width="194" height="48" rx="6" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p2cVd" x="713" y="106" text-anchor="middle">36%</text>
+
+        <text class="p2cN" x="30" y="166">Pendo 2019</text>
+        <text class="p2cS" x="30" y="184">615 subscriptions, customers</text>
+        <text class="p2cS" x="30" y="199">of over a year, three months</text>
+        <text class="p2cS" x="30" y="214">of aggregated usage</text>
+        <rect x="250" y="156" width="134" height="48" rx="6" fill="#2B3947"/>
+        <text class="p2cV" x="317" y="186" text-anchor="middle">24%</text>
+        <rect x="388" y="156" width="314" height="48" rx="6" fill="#3E5266"/>
+        <text class="p2cV" x="545" y="186" text-anchor="middle">56%</text>
+        <rect x="706" y="156" width="104" height="48" rx="6" fill="#EEF2F6" stroke="#C6D2DE"/>
+        <text class="p2cVd" x="758" y="186" text-anchor="middle">20%</text>
+
+        <rect x="250" y="220" width="560" height="26" rx="6" fill="#C6D2DE"/>
+        <text class="p2cKs" x="264" y="238">Rarely or never: 64% on the slide, 80% in the telemetry. Different buckets, decades apart.</text>
+
+        <rect x="30" y="258" width="820" height="46" rx="8" fill="#966718"/>
+        <text class="p2cB" x="48" y="278">Neither confirms the other. Pendo is real telemetry from one vendor's own B2B SaaS customers,</text>
+        <text class="p2cB" x="48" y="296">not a representative sample of software. No academic replication of either figure exists.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - two figures that get quoted together and measure different things</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The honest counterweight, and its limits<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>In February 2019 Pendo published a Feature Adoption Report. Unlike the slide, it says what it measured: <strong>615 subscriptions</strong>, all customers of more than a year, with usage aggregated over a <strong>three-month period</strong>, across banking, HR technology, education, logistics, healthcare and e-commerce. That is telemetry. Software reporting what people actually clicked, not a survey and not a recollection.</p>
+        <p>Its split is <strong>frequent 12%, moderate 8%, rare 56%, never used 24%</strong>. It also reports that <strong>12% of features generate 80% of average daily usage volume</strong>, which is the part most worth carrying around.</p>
+        <p><strong>Resist the urge to say this confirms the 45%.</strong> It does not, in both directions at once. Pendo's never bucket is 24%, which is a lot lower than 45. Its rarely-or-never total is 80%, which is considerably worse than 64. Different definitions of the buckets, different populations, seventeen years apart. Two numbers that disagree in opposite directions are not corroboration, they are two numbers.</p>
+        <p>And state the limit whenever you quote it. Pendo measured Pendo's own customer base: B2B software companies that bought a product analytics tool. Real telemetry, honestly described, and not a representative sample of software in general. No peer-reviewed replication of any of this exists, and no comparable published figure from another analytics vendor could be found. The absence is part of what you know.</p>
+      </div>
+    </details>
+
+    <div class="callout tip">
+      <p><strong>The lesson underneath the numbers.</strong> The tidy famous figure travels and the careful one does not. One unsourced pie chart from a 2002 keynote has outrun a properly described telemetry study by a wide margin, and it will still be quoted at you next year. Here is the part that actually helps: <strong>you do not need any of these figures to justify cutting.</strong> The argument for cutting stands on mechanism, which is what session 3 measures in front of you. What you need the numbers for is narrower and more practical: knowing which ones you are allowed to say out loud, and what you have to say alongside them.</p>
+    </div>
+  </section>
+
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers reading a pile</span>
+      <h2>Group by the problem, never by the feature</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">A pile of requests sorted by feature name tells you what words people use. Sorted by the problem underneath, it tells you where the product hurts. Those are not the same list and they are frequently in a different order.</p>
+
+    <table class="clean">
+      <tr><th>What arrived, word for word</th><th>Who said it</th><th>The problem it implies</th></tr>
+      <tr><td><strong>"Can we get a weekly CSV export?"</strong></td><td>The finance analyst</td><td>The Monday numbers have to leave the system to be checked and shared, so she rebuilds them by hand every week</td></tr>
+      <tr><td><strong>"Can you add a print button?"</strong></td><td>Her manager</td><td><em>The same problem.</em> Different feature name, different person, one underlying thing: the Monday numbers cannot be shared with people who do not log in</td></tr>
+      <tr><td><strong>"We need notifications"</strong></td><td>The support lead</td><td>He finds out about an angry customer three days late, usually from the customer</td></tr>
+      <tr><td><strong>"We need notifications"</strong></td><td>The overnight ops scheduler</td><td><em>A different problem entirely.</em> She cannot tell whether last night's job finished before the morning shift arrives, and the wording is identical</td></tr>
+      <tr><td><strong>"Can we have a search box?"</strong></td><td>A new starter, week two</td><td>She cannot find records she knows exist, because nobody told her the account names were entered four different ways</td></tr>
+    </table>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Volume is not priority<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Once the pile is grouped by problem, the tempting next move is to count. Resist it for one minute, because a raw count is almost always a measure of who is comfortable asking rather than where the pain is.</p>
+        <p>Three things to record next to each group, in this order.</p>
+        <p><strong>Who asked.</strong> By name, not by department. A group of four requests that all came from one enthusiastic person is a different object from a group of four requests from four people, and a plain tally cannot tell them apart.</p>
+        <p><strong>How many distinct people.</strong> This is the count that means something. Two separate people arriving independently at the same problem is a stronger signal than eight requests from one.</p>
+        <p><strong>Whether they hold the job.</strong> The most important and most skipped. Is the person asking the one who actually does the work, or are they relaying, guessing, or advocating on behalf of somebody they last spoke to in March? A request from the person with the problem and a request about somebody else's problem look identical in a ticket queue and are worth wildly different amounts.</p>
+        <p>The quiet outcome of doing this properly: some groups shrink to nothing, and one group you had not noticed turns out to have three different people circling it with three different feature names.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The request that serves no problem<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every pile has at least one. A request where, after honest effort, you cannot write down what problem it solves for whom. Not a hard one, not a vague one: one where the problem line comes out empty.</p>
+        <p>There are three usual explanations and they need different handling. Sometimes you simply have not asked yet, and the problem is real and obvious the moment you do. Sometimes it was copied from another product, because somebody saw it there and it looked professional. And sometimes it exists because it was on a list, and the list came from a meeting, and nobody in the meeting had the problem either.</p>
+        <p>The first is fixed with a ten minute conversation. The other two are the interesting ones, because they are how a backlog silently fills with work that will be built, shipped, maintained for years, and never used. Finding one of these in your own pile tonight is a genuinely useful outcome, and it is why the last stage of the build-along asks for exactly that.</p>
+      </div>
+    </details>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Write one problem statement for a group" data-hint="Pick the group with the most distinct people in it. One sentence naming who has the problem and what they are trying to get done. If you cannot write it without naming a feature, the group is a feature group, not a problem group." data-seed="" data-cta="Count it"></div>
+  </section>
+
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Read your own pile</h2>
+      <span class="tag demo">★ 22 min · use what you collected</span>
+    </div>
+    <p class="lede">The requests you gathered over the last month. Five stages. You should end with fewer groups than you had requests, and one request sitting on its own with nothing written next to it.</p>
+
+    <div class="tick" data-stages="List them raw|Name the problem each implies|Group by problem, not feature|Mark who asked|Find the one that serves nothing" data-title="Five stages on your own pile" data-foot="If your groups came out one-to-one with your requests, you grouped by feature name without noticing. Go back to stage two and write the problem lines in the words of the person who has the problem, not in the words of the request.">
+      <p class="tick-note" data-stage="0"><b>List every request exactly as it arrived</b>, in the words that were used, including the ones you already decided against. Do not tidy the phrasing and do not merge anything yet. Ten to twenty is a good pile. Five is enough.</p>
+      <p class="tick-note" data-stage="1"><b>Next to each, write the problem it implies</b> in one line. Not the feature restated. If you genuinely cannot write one, leave it blank rather than inventing it, because the blanks are the point of stage five.</p>
+      <p class="tick-note" data-stage="2"><b>Now group by the problem line, ignoring the feature names entirely.</b> Expect two surprises: requests that sound nothing alike collapsing into one group, and two identically worded requests landing in different groups.</p>
+      <p class="tick-note" data-stage="3"><b>Mark each request with who asked and whether they hold the job</b> they are describing. Then count distinct people per group, not requests. Compare that order with the order you would have guessed.</p>
+      <p class="tick-note" data-stage="4"><b>Find the request whose problem line is still empty.</b> Decide which of the three it is: not yet asked, copied from another product, or inherited from a list. Write your decision down next to it.</p>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>If your pile is small.</strong> Five requests is plenty for this. The exercise gets its value from the regrouping, not the volume, and a small pile makes stage four honest because you can actually name every person. If you have no pile at all, use the last five things anybody asked you for in any context, including the ones that were not about software.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 3</h2>
+      <span class="tag exercise">25 min</span>
+    </div>
+    <ol>
+      <li><strong>Take one grouped problem back to the people who asked.</strong> Restate it to them the way you wrote it, and watch what they correct. The correction is the finding, and it usually arrives in the first ten seconds.</li>
+      <li><strong>Ask the "what would you do if it did not exist" question</strong> about one request you were quietly planning not to build. Write down the answer word for word. Sometimes it changes your mind, which is the useful case.</li>
+      <li><strong>Track down where one number you repeat came from.</strong> Any number, from any part of your work. Find the primary source, not the article citing it. Note what the source does not say, because that is the part that travels badly.</li>
+      <li><strong>Bring your grouped list to session 3.</strong> You will be cutting a backlog next time, and it goes much better when you already know which of your own items serve a problem you can name.</li>
+    </ol>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 2 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">1 · Two people ask for "notifications" in the same week. What does that tell you?</p>
+      <button class="qopt" type="button">A · Nothing yet, because identical wording routinely covers unrelated problems - one of them may be finding out about angry customers three days late while the other cannot tell whether an overnight job finished, and those need different things built</button>
+      <button class="qopt" type="button">B · That notifications are now the highest priority item in the backlog</button>
+      <button class="qopt" type="button">C · That the product has a notification gap and should ship notifications</button>
+      <button class="qopt" type="button">D · That one of the two people copied the idea from the other</button>
+      <p class="qwhy">Grouping by the feature name would put these two together and produce one build that serves neither properly. Grouping by the problem underneath splits them, which is the whole reason the second grouping is worth doing.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="3">
+      <p class="qtext">2 · Somebody quotes "45% of features are never used" at you. What is the accurate thing to say?</p>
+      <button class="qopt" type="button">A · That figure was disproved by later telemetry showing the real number is 24%</button>
+      <button class="qopt" type="button">B · It is from a large study of 35,000 projects run since 1994</button>
+      <button class="qopt" type="button">C · It has been replicated several times and is now well established</button>
+      <button class="qopt" type="button">D · The figure is really on a 2002 keynote slide, alongside rarely 19, sometimes 16, often 13 and always 7, and the slide carries no sample size, no year and no method, so it is not a study and the related 64% is just the first two slices added</button>
+      <p class="qwhy">A overstates: Pendo measured different buckets on a different population, so it neither confirms nor disproves. B borrows the methodology of separate research described elsewhere in the same deck. C is the opposite of true, since no academic replication exists at all.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · Why is dismissing feature requests worse than building too many of them?</p>
+      <button class="qopt" type="button">A · Because the people who ask tend to be the most senior, and they remember</button>
+      <button class="qopt" type="button">B · Because requests are the cheapest evidence you have about where the product hurts, they arrive unprompted from people doing the real work, and once people decide you are not worth telling, the problems continue while the information stops</button>
+      <button class="qopt" type="button">C · Because it is rude, and product work depends on goodwill</button>
+      <button class="qopt" type="button">D · Because a dismissed request usually comes back later as an escalation</button>
+      <p class="qwhy">Over-building wastes effort you can see and account for. Dismissing quietly destroys an information channel, and the silence that follows looks exactly like everything being fine. Note that taking a request seriously and building the named feature were never the same decision.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The five figures: never 45, rarely 19, sometimes 16, often 13, always 7</span><span class="note">Read from the primary source, a 2002 conference keynote deck that survives only in a web archive capture</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">That "64% rarely or never" is the same slide</span><span class="note">45 plus 19 from the same pie. Established from the primary, not inferred from secondary retellings</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">What was measured, on how many, and when</span><span class="note">Not stated, because the slide gives none of it and the two later accounts disagree with each other. Never described here as a study</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The 2019 feature adoption telemetry</span><span class="note">Read in full: 615 subscriptions, customers of over a year, three months of aggregated usage, and the four buckets as published</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">That the telemetry confirms the older figure</span><span class="note">Not claimed, and the page says why. Different buckets, different decades, disagreeing in both directions, with no academic replication of either</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Every fact on this page, and its verification tier, is recorded in the course's source map.</p>
+  </section>
+
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 2 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Evidence, not specification</b><span>A request proves a problem exists. It never says what to build.</span></div>
+      <div class="cheat-item"><b>Restate the problem back</b><span>If you have it wrong they will correct you at once. That is the point.</span></div>
+      <div class="cheat-item"><b>"What would you do if it did not exist?"</b><span>Finds the workaround without sounding like a refusal.</span></div>
+      <div class="cheat-item"><b>Dismissing beats over-building for damage</b><span>The requests stop. The problems do not.</span></div>
+      <div class="cheat-item"><b>Group by problem, never by feature name</b><span>Same words, two problems. Five names, one problem.</span></div>
+      <div class="cheat-item"><b>Count distinct people, not requests</b><span>And ask whether the asker holds the job.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>You now have a pile grouped by problem, with people's names on it, and at least one item that serves nothing you could name. Session 3 is the bench night. One stated job, twelve features on a backlog, and five different ways of cutting it. You do the cutting yourself, and the numbers are computed in front of you rather than asserted at you: what each cut actually buys, what it costs, and what one of them buys you precisely nothing at all. Bring your grouped list.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 2 of 6 · learn-product-thinking-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="01-the-job-not-the-feature.html">← Previous: The job, not the feature</a> &nbsp;·&nbsp; <a href="../index.html">Course home</a> &nbsp;·&nbsp; <a href="03-the-cut-bench.html">Next: The cut bench →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
